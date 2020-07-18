@@ -15,7 +15,7 @@ quality = input("Your quality of images, from 0-10 (lower is better): ")
 print("Starting...")
 
 quality = int(quality)
-pages = int(pages) + 1
+pages = int(pages)
 
 chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
@@ -37,14 +37,20 @@ def Download(url, directory, bookname, pagenum):
         pass
     else:
         os.mkdir(directory)
+    time.sleep(0.5)
     r = requests.get(url, cookies=cookies_dict, stream=True)
     r.raw.decode_content = True
     if r.status_code == 200:
+        time.sleep(1)
         print("Downloading page: " + str(pagenum))
         with open(directory + "/" + str(pagenum) + ".jpg", 'wb') as out_file:
             shutil.copyfileobj(r.raw, out_file)
             pass
-    else: print(r.status_code)
+        #print("Done downloading page: " + str(pagenum))
+    else:
+        print("Error " + r.status_code + " while downloading page: " + str(pagenum))
+        driver.quit()
+    driver.quit()
 
 
 def split(string):
@@ -95,6 +101,7 @@ def GetPagesArray(srcurl, maxpages):
         pages.append(modurl)
         modurl = srcurl
         i += 0.0001
+    time.sleep(0.5)
     return pages
 
 
@@ -114,6 +121,17 @@ def GetBaseUrl(bookurl, num = 0):
     cookies_list = {}
     for cookie in cookies:
        cookies_list[cookie['name']] = cookie['value']
+    cookies_dict = dict(cookies_list)
+    time.sleep(0.5)
+    return base
+
+
+print("Finding pages...")
+download = GetPagesArray(GetBaseUrl(url), pages)
+print("Downloading pages...")
+for i in range(len(download)):
+    threading.Thread(target=Download, args=(download[i], dir, "", i)).start()
+    time.sleep(0.5)ue']
     cookies_dict = dict(cookies_list)
     return base
 

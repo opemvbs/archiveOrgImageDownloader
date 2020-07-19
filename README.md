@@ -57,3 +57,9 @@ Fill in the details in order to download your book.
 ```Your download directory/folder: ./book/computationalmet00hann_0```  
 ```Your pages that will be downloaded: 488```  
 ```Your quality of images, from 0-10 (lower is better): 0```  
+
+## TODO
+- JPG to PDF converter, and combiner into a single file.
+- Making JPG to PDF converter, and combiner into a single file.
+- Making the GUI, if possible and have all the time in the world.
+- Tweaks and stuff.

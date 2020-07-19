@@ -131,13 +131,4 @@ download = GetPagesArray(GetBaseUrl(url), pages)
 print("Downloading pages...")
 for i in range(len(download)):
     threading.Thread(target=Download, args=(download[i], dir, "", i)).start()
-    time.sleep(0.5)ue']
-    cookies_dict = dict(cookies_list)
-    return base
-
-
-print("Finding pages...")
-download = GetPagesArray(GetBaseUrl(url), pages)
-print("Downloading pages...")
-for i in range(len(download)):
-    threading.Thread(target=Download, args=(download[i], dir, "", i)).start()
+    time.sleep(0.5)

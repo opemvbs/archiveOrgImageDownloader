@@ -53,8 +53,8 @@ Fill in the details in order to download your book.
 
 ```Your archive.org email account: foo@gmail.com```  
 ```Your archive.org password: bar123```  
-```Your archive.org book link (relative to your current working directory): https://archive.org/details/computationalmet00hann_0```  
-```Your download directory/folder: ./book/computationalmet00hann_0```  
+```Your archive.org book link: https://archive.org/details/computationalmet00hann_0```  
+```Your download directory/folder (relative to your current working directory): ./book/computationalmet00hann_0```  
 ```Your pages that will be downloaded: 488```  
 ```Your quality of images, from 0-10 (lower is better): 0```  
 

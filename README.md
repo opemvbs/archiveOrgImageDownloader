@@ -1,3 +1,8 @@
+# [NOT WORKING ANYMORE]
+
+I've tried to fix the issues arised by @hamensman that keeps downloading the first page, but later while debugging I found out that it looks like archive.org has disabled the "downloading-by-link-iteration" method, so there's no fix, and there will be no more from me.
+
+
 # archiveOrgImageDownloader
 
 This is a modified and improved version of the [harrcor's](https://github.com/harrcorr/ArchiveOrgLibraryDownloader) repository.  
